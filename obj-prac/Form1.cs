@@ -11,7 +11,7 @@ namespace obj_prac
 {
     public partial class Form1 : Form
     {
-        static Random rand = new Random();
+        public static Random rand = new Random();
         /** データの種類*/
         enum TYPE
         {

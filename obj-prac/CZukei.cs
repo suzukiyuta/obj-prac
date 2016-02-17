@@ -7,24 +7,40 @@ namespace obj_prac
 {
    abstract class CZukei
     {
-      protected static Random rand = new Random();
+        //自分のインスタンス
+        protected static Random rand = new Random();
+
+        //キャラクタータイプ
+        protected enum TYPE
+        {
+            SHIKAKU,     // 四角形
+            SANKAKU,     // 三角形
+        };
         /** 種類。処理を分けるのに利用する*/
-      protected  List<TYPE> type;
+        protected TYPE type;
         /** 底辺*/
-       protected List<float> teihen;
+        protected float teihen;
         /** 高さ*/
-       protected List<float> takasa;
+        protected float takasa;
 
     }
 
-    
-    public CZukei()
+    /** コンストラクタ*/
+  public CZukei()
     {
-         // 底辺に1～10の乱数を求める
-            teihen.Add(rand.Next(1, 11));
-            // 高さに1～10の乱数を求める
-            takasa.Add(rand.Next(1, 11));
+        // 底辺に1～10の乱数を求める
+        teihen.Add(rand.Next(1, 11));
+        // 高さに1～10の乱数を求める
+        takasa.Add(rand.Next(1, 11));
+        teihen + takasa = (takasa * teihen);
+        teihen + takasa= (teihen * takasa / 2f);
     }
+
+     abstract calc()
+    {
+
+    }
+
 
 }
 
